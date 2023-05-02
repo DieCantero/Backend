@@ -1,4 +1,7 @@
 
+import fs from "fs";
+import
+
 
 class ProductManajer {
     constructor () {
@@ -22,13 +25,6 @@ class ProductManajer {
            return
         } 
 
-        //filtro de codigo:
-
-      /*  } else if (this.products.producto.code === this.products.producto.code) {
-            console.log("Codigo ya cargado")             
-           return */
-
-       
             
         if (this.products.length === 0) {
                 producto.id = 1;
@@ -37,9 +33,6 @@ class ProductManajer {
         }
             
         this.products.push(producto)
-
-
-
     } 
 
     getProducts = ()=> {
@@ -47,28 +40,25 @@ class ProductManajer {
         return
     }
     
-    /*
+/*
     getProductById = (idProducto)=> {
-        const compararId = this.products.findIndex(producto => producto.id === idProducto)
+        const compararId = this.products.includes(producto => producto.id === idProducto)
         if (compararId) {
             console.log("Not found")
-            return
-        }
-       }*/
-       
+        } else {console.log("found")}   
+       } 
+*/
 
-       getProductById = (idProducto)=> {
-        const compararId = this.products.findIndex(producto => producto.id)
-        if (compararId === idProducto) {
-            console.log("Not found")
-            return
-        }
-       }
-       
-    
+getProductById = (idProducto)=> {
+    const compararId = this.products.find(idProducto)
+    return idProducto
+   } 
+
 }
 
 const uno = new ProductManajer()
-
-
-
+uno.addProduct(1,1,1,1,1,1)
+uno.addProduct(2,2,2,2,2,2)
+uno.addProduct(3,3,3,3,3,3)
+//uno.getProducts()
+uno.getProductById(2)
